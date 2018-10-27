@@ -19,6 +19,7 @@ import {MatButtonModule,
 } from '@angular/material';
 import { TopnavComponent } from './topnav/topnav.component';
 import { MenuComponent } from './menu/menu.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MenuComponent } from './menu/menu.component';
     MatCardModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    SlideshowModule
 
   ],
   providers: [],

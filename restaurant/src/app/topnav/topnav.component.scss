@@ -1,21 +1,13 @@
+@import '../../sass-variables.scss';
+
 header{
-    height: 51px;
-    border-bottom: 1px solid #e7e7e7;
+    z-index: 99999;
+    height: 75px;
     position: fixed;
-    width: 100vw;
-    background-color: rgba(3, 3, 3, 0.9);
-    #header-title{
-        margin-left: 10px;
-        a{
-            color: white;
-        }
-    }
-    #header-title-mobile{
-        margin-left: 59px;
-        a{
-            color: white;
-        }
-    }
+    width: 100%;
+    background-color: $navbar-bg;
+  
+    
     
 }
 
@@ -25,28 +17,43 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    vertical-align: middle;
     height: 52px;
 }
 .flex-container{
+    width: 100%;
     a{
         text-decoration: none;
-        color: white;
+        color: $navbar-text;
     }
     ul{
         margin-right: 20px;
         display: flex;
+    
     }
     li{
         padding: 10px;
     }
+    
+    .logoWrapper{
+        align-self: flex-start;
+        height: 112px;
+        width: 172px;
+    }
+    .logoWrapperMobile{
+        align-self: center;
+        height: 112px;
+        width: 129px;
+        margin-top: 44px;
+    }
 }
 .closedHamContainer{
     position: fixed;
-    bottom: 95.5vh;
-    right: 9px;
+    left: 85%;
+    top: 35px;
     cursor: pointer;
     i{
-        color: white;
+        color: $navbar-text;
     }
 }
     .hamOpen{
@@ -64,30 +71,32 @@ header{
         text-decoration: none;
         animation-name: fadeMenuItems;
         animation-duration: 1s;
-        color: rgba(3, 3, 3, 0.0);
+        color: $hamburger-begin-fade;
         
         animation-fill-mode: forwards;
     }
     ul{
-        
+        margin: 0 auto;
+        margin-top: 60px;
+        padding: none;
         display: flex;
         flex-direction: column;
     }
     li{
-        
+        margin-left: -37px;
         width:100%;
         padding: 10px;
     }
 
 }
 @keyframes fadeMenu {
-    0% {background-color: rgba(255, 255, 255, 0.0); }
-    100% {background-color: #444}
+    0% {background-color: $hamburger-begin-fade; }
+    100% {background-color: $hamburger-bg}
 
 }
 @keyframes fadeMenuItems {
-    0% {color: rgba(3, 3, 3, 0.9)}
-    100% {color: rgba(255, 255, 255, 1) }
+    0% {color: $navbar-bg}
+    100% {color: $hamburger-text }
 
 }
 @media only screen and (max-width: 768px) {
