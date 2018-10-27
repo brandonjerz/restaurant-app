@@ -1,0 +1,28 @@
+<header>
+  <div *ngIf="mobileView" class="closedHamContainer" (click)="toggleHam()">
+      <i class="material-icons">{{hamIcon}}</i>
+  </div>
+  <div class="flex-container">
+   
+    <h1 *ngIf="!mobileView"id="header-title"><a href="#">Papa Leo's</a></h1>
+    <h1 *ngIf="mobileView"id="header-title-mobile"><a href="#">Papa Leo's</a></h1>
+
+    
+    <ul>
+      <li *ngIf="!mobileView"><a [routerLink]="['/']">About</a></li>
+      <li *ngIf="!mobileView"><a [routerLink]="['/menu']">Menu</a></li>
+      <li *ngIf="!mobileView"><a href="#">Directions</a></li>
+      <li *ngIf="!mobileView"><a href="#">Loyalty</a></li>
+      
+    </ul>
+  </div>
+  <div *ngIf="!hamClosed && mobileView" class="hamOpen"> 
+      
+      <ul>
+          <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/']">About</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/menu']" href="#">Menu</a></li>
+          <li *ngIf="mobileView"><a href="#">Directions</a></li>
+          <li *ngIf="mobileView"><a href="#">Loyalty</a></li>
+        </ul>
+  </div>
+</header>

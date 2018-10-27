@@ -1,0 +1,98 @@
+header{
+    height: 51px;
+    border-bottom: 1px solid #e7e7e7;
+    position: fixed;
+    width: 100vw;
+    background-color: rgba(3, 3, 3, 0.9);
+    #header-title{
+        margin-left: 10px;
+        a{
+            color: white;
+        }
+    }
+    #header-title-mobile{
+        margin-left: 59px;
+        a{
+            color: white;
+        }
+    }
+    
+}
+
+.flex-container{
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+}
+.flex-container{
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    ul{
+        margin-right: 20px;
+        display: flex;
+    }
+    li{
+        padding: 10px;
+    }
+}
+.closedHamContainer{
+    position: fixed;
+    bottom: 95.5vh;
+    right: 9px;
+    cursor: pointer;
+    i{
+        color: white;
+    }
+}
+    .hamOpen{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: wrap;
+    animation-name: fadeMenu;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    
+    a{
+        text-decoration: none;
+        animation-name: fadeMenuItems;
+        animation-duration: 1s;
+        color: rgba(3, 3, 3, 0.0);
+        
+        animation-fill-mode: forwards;
+    }
+    ul{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    li{
+        
+        width:100%;
+        padding: 10px;
+    }
+
+}
+@keyframes fadeMenu {
+    0% {background-color: rgba(255, 255, 255, 0.0); }
+    100% {background-color: #444}
+
+}
+@keyframes fadeMenuItems {
+    0% {color: rgba(3, 3, 3, 0.9)}
+    100% {color: rgba(255, 255, 255, 1) }
+
+}
+@media only screen and (max-width: 768px) {
+    .flex-container{
+        justify-content: center;
+    }
+
+}
