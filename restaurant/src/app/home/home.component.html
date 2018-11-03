@@ -1,3 +1,62 @@
 <div class="slider-wrapper">
     <slideshow [imageUrls]="imageUrlArray" [minHeight]="'700px'" [autoPlay]="true" [showArrows]="false"></slideshow>
 </div>
+<div class="slider-wrapper-mobile">
+        <slideshow [imageUrls]="imageUrlArray" [minHeight]="'400px'" [autoPlay]="true" [showArrows]="false"></slideshow>
+    </div>
+<div class="welcomeSection">
+    <h2>Welcome to Papa Leos!</h2>
+    <h2>More Than Just Great Pizza</h2>
+</div>
+<div class="ourStorySection">
+
+      <img class="ourStoryImg" src="http://www.hawaiifamilyfinance.org/wp-content/uploads/2018/06/pizz.jpg">
+     <div class="ourStoryDesc">
+        <h1>Our Story</h1>
+        <p>Dough Boy’s is a locally owned family business founded in 1989 in the surf-town of Virginia Beach, VA, a sunny vacation-land that plays host to millions of visitors annually. Back then the pizza concept was called Dough Boy’s Pasta and Grill, and there was one Dough Boy’s, located at 2410 Atlantic Avenue in the heart of the resort.</p>
+        <p>Dough Boy’s is a locally owned family business founded in 1989 in the surf-town of Virginia Beach, VA, a sunny vacation-land that plays host to millions of visitors annually. Back then the pizza concept was called Dough Boy’s Pasta and Grill, and there was one Dough Boy’s, located at 2410 Atlantic Avenue in the heart of the resort.</p>
+        <button mat-raised-button color="primary">Learn More</button>
+    </div>
+    
+</div>
+<div class="menuPreviewWrapper">
+    <div class="menuPreview">
+        <div class="flex-container">
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            <div class="menuItem">
+                <app-home-menu-item></app-home-menu-item>
+            </div>
+            
+        </div>
+    </div>
+        
+</div>
+<div class="maps">
+    <div class="locationButtons">
+        <button mat-raised-button color="primary" [style.background-color]="map==1 ? '#673ab7' : '#8e69ce'"(click)="swapLocation(1)">Lockport</button>
+        <button mat-raised-button color="primary" [style.background-color]="map!=1 ? '#673ab7' : '#8e69ce'" (click)="swapLocation(2)">Niagara Falls</button>
+    </div>
+    
+
+    <div class="map1" *ngIf="map == 1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.9032407422274!2d-78.69541228446036!3d43.169555179140964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d37f230e508853%3A0xd4f4de6584b20299!2sPapa+Leo&#39;s+Pizzeria!5e0!3m2!1sen!2sus!4v1541208729698" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="map2" *ngIf="map == 2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2913.2510800885775!2d-78.92865088446253!3d43.09923807914414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d36f5573912a99%3A0x6bcedad2070516bb!2sPapa+Leo&#39;s+Pizzeria!5e0!3m2!1sen!2sus!4v1541208978974" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+

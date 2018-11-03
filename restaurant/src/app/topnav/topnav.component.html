@@ -1,23 +1,24 @@
 <header>
-  <div *ngIf="mobileView" class="closedHamContainer" (click)="toggleHam()">
-      <i class="material-icons">{{hamIcon}}</i>
-  </div>
+  
   <div class="flex-container">
    
-    <div *ngIf="!mobileView" class="logoWrapper">
-    <img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" width="172px" height="112px">
-    </div>
-    <div *ngIf="mobileView"class="logoWrapperMobile">
-        <img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" width="172px" height="112px">
-    </div>
+    
+    
     <ul>
       <!-- <li></li>
       <li *ngIf="mobileView"><img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" width="50px" height="112px"></li> -->
       <!-- <li><i class="material-icons phone">phone</i></li> -->
+      <!-- <li class="logoWrapper"><img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" width="172px" height="112px"></li> -->
+      <li class="logoWrapperMobile">
+          <img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" >
+        </li>
       <li *ngIf="!mobileView"><a [routerLink]="['/']">About</a></li>
       <li *ngIf="!mobileView"><a [routerLink]="['/menu']">Menu</a></li>
       <li *ngIf="!mobileView"><a href="#">Directions</a></li>
       <li *ngIf="!mobileView"><a href="#">Loyalty</a></li>
+      <li *ngIf="mobileView"><div class="hamButton" (click)="toggleHam()">
+          <i class="material-icons">{{hamIcon}}</i>
+      </div></li>
       
     </ul>
   </div>

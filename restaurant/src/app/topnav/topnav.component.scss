@@ -4,6 +4,7 @@ header{
     z-index: 99999;
     height: 75px;
     position: fixed;
+    top:0;
     width: 100%;
     background-color: $navbar-bg;
   
@@ -15,47 +16,55 @@ header{
 
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     vertical-align: middle;
     height: 52px;
+    margin-top: 10px;
 }
 .flex-container{
-    width: 100%;
+
     a{
         text-decoration: none;
         color: $navbar-text;
     }
     ul{
-        margin-right: 20px;
+        margin: 0px;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
         display: flex;
     
     }
     li{
+        align-self: flex-end;
         padding: 10px;
     }
     
     .logoWrapper{
+        margin-left: 20px;
+        flex: 1;
         align-self: flex-start;
-        height: 112px;
-        width: 172px;
     }
     .logoWrapperMobile{
+        margin-top: 45px;
+        margin-left: 20px;
+        flex:1;
         align-self: center;
+        width: 172px; 
         height: 112px;
-        width: 129px;
-        margin-top: 44px;
+   
+
     }
 }
-.closedHamContainer{
-    position: fixed;
-    left: 85%;
-    top: 35px;
+.hamButton{
+    margin-right: 20px;
     cursor: pointer;
     i{
         color: $navbar-text;
     }
 }
+    
+
     .hamOpen{
     width: 100vw;
     display: flex;
@@ -102,6 +111,7 @@ header{
 @media only screen and (max-width: 768px) {
     .flex-container{
         justify-content: center;
+        text-align: center
     }
 
 }

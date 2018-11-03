@@ -20,13 +20,15 @@ import {MatButtonModule,
 import { TopnavComponent } from './topnav/topnav.component';
 import { MenuComponent } from './menu/menu.component';
 import {SlideshowModule} from 'ng-simple-slideshow';
+import { HomeMenuItemComponent } from './home-menu-item/home-menu-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TopnavComponent,
-    MenuComponent
+    MenuComponent,
+    HomeMenuItemComponent
   ],
   imports: [
     BrowserModule,

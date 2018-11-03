@@ -1,4 +1,153 @@
+@import '../../sass-variables.scss';
 .slider-wrapper{
     z-index: 2;
+    display: block;
+}
+.slider-wrapper-mobile{
+    display: none;
+}
+.welcomeSection{
+    margin-top: 90px;
+    height: 180px;
+    text-align: center;
+    h2{
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        font-weight: 100;
+    }
+}
+
+.ourStorySection{
+    position: relative;
+    left: 10%;
+    margin: 0 auto;
+   
+   margin-bottom: -200px;
+    height: 1000px;
+    .ourStoryImg{
+        width: 1000px;
+        max-width: 1000px;
+        height: auto;
+        max-height: 500px;
+        z-index: 3;
+      
+    }
+
+    .ourStoryDesc{
+        position: absolute;
+        padding: 15px;
+        top: 60px;
+        right: 200px;
+        width: 350px;
+        height: 707px;
+        background-color: white;
+        z-index: 9999;
+        h1{
+            font-size: 35px;
+            font-weight: 600;
+        }
+        p{
+            color: $paragraph;
+            font-size: 15px;
+            line-height: 25px;
+            font-family: 'Roboto', sans-serif;
+        }
+        button{
+            height: 64px;
+            width: 208px;
+            margin-top: 50px;
+            span{
+                font-size: 26px;
+            }
+        }
+    }
+}
+.menuPreviewWrapper{
+    height: auto;
+    background-image: url("https://images6.alphacoders.com/412/412086.jpg");
+    background-size: cover;
+    width: 100%;
+    .menuPreview{
+        width: 80%;
+        margin: 0 auto;
+        .flex-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .menuItem{
+            background-color: white;
+            color: black;
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    }
+        
+}
+.maps{
+  
+    
+    .locationButtons{   
+        margin: auto;
+        margin-bottom: 44px;
+        width: 430px;
+
+            button{
+                height: 64px;
+                width: 208px;
+                margin-top: 50px;
+                margin-right: 5px;
+                background-color: #fff;
+                span{
+                    font-size: 26px;
+                }
+            }
+     
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .ourStorySection{
+        position: static;
+        margin-bottom: 35px;
+        .ourStoryImg{
+            margin: 0 auto;
+            max-width: 1000%;
+            width: 100%;
+        }
+    
+        .ourStoryDesc{
+            position: static;
+            margin: 0 auto;
+            width: 80%;
+        }
+        
+    }
+    
+    
+    
+
+}
+@media only screen and (max-width: 796px) {
+    .slider-wrapper{
+        display: none;
+    }
+    .slider-wrapper-mobile{
+        display: block;
+    }
+    .menuPreviewWrapper{
+        .menuPreview{
+            .menuItem{
+                width: 90vw;
+            }
+        }
+    }
+    
+    
 
 }
