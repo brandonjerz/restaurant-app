@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-home-menu-item',
@@ -6,11 +7,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./home-menu-item.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeMenuItemComponent implements OnInit {
 
+export class HomeMenuItemComponent implements OnInit {
+ @Input() name: string;
+ @Input() accentText: string;
+ @Input() imgUrl: string;
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

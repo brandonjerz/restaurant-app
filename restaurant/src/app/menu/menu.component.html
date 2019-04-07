@@ -1,4 +1,30 @@
-<div class="padNav"></div>
-<p>
-  menu works!
-</p>
+
+<div class="menuImg">
+    <img src="https://doughboyspizza.com/wp-content/themes/butter/images/header/headermenu.jpg" height="200px">
+</div>
+<div class="welcomeSection">
+    <h2>MENU</h2>
+</div>
+<div class ="categoryBtnContainer">
+    <button id="firstCatButton" mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pizza', 'unselectedCatButton': selectedCat != 'pizza' }" (click)="filterOn('pizza')">Pizza</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'starters', 'unselectedCatButton': selectedCat != 'starters' }" (click)="filterOn('starters')">Starters</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'salads', 'unselectedCatButton': selectedCat != 'salads' }" (click)="filterOn('salads')">Salads</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'subs-and-wraps', 'unselectedCatButton': selectedCat != 'subs-and-wraps' }" (click)="filterOn('subs-and-wraps')">Subs/Wraps</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pasta', 'unselectedCatButton': selectedCat != 'pasta' }" (click)="filterOn('pasta')">Pasta</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'calzones', 'unselectedCatButton': selectedCat != 'calzones' }" (click)="filterOn('calzones')">Calzones</button>
+</div>
+
+
+<div class="flex-grid">
+    <div *ngFor="let mi of shownMenuItems">
+        <div class = "col">
+            <mat-card>
+                <app-menu-item [menuItem]="mi"></app-menu-item>
+            </mat-card> 
+        </div>
+
+    </div>
+    
+          
+    </div>
+

@@ -22,7 +22,7 @@
     left: 10%;
     margin: 0 auto;
    
-   margin-bottom: -200px;
+   margin-bottom: -333px;
     height: 1000px;
     .ourStoryImg{
         width: 1000px;
@@ -37,11 +37,13 @@
         position: absolute;
         padding: 15px;
         top: 60px;
-        right: 200px;
-        width: 350px;
-        height: 707px;
+        right: 14%;
+        width: 525px;
+        height: auto;
         background-color: white;
         z-index: 9999;
+        border-top: red solid 10px;
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         h1{
             font-size: 35px;
             font-weight: 600;
@@ -53,6 +55,7 @@
             font-family: 'Roboto', sans-serif;
         }
         button{
+            color: white;
             height: 64px;
             width: 208px;
             margin-top: 50px;
@@ -84,6 +87,7 @@
             text-align: center;
             line-height: 75px;
             font-size: 30px;
+            border-top: red solid 10px;
         }
     }
         
@@ -95,13 +99,15 @@
         margin: auto;
         margin-bottom: 44px;
         width: 430px;
+        
 
             button{
                 height: 64px;
                 width: 208px;
                 margin-top: 50px;
                 margin-right: 5px;
-                background-color: #fff;
+                color: white;
+
                 span{
                     font-size: 26px;
                 }
@@ -115,6 +121,7 @@
     .ourStorySection{
         position: static;
         margin-bottom: 35px;
+        height: auto;
         .ourStoryImg{
             margin: 0 auto;
             max-width: 1000%;
@@ -122,6 +129,7 @@
         }
     
         .ourStoryDesc{
+            height: auto;
             position: static;
             margin: 0 auto;
             width: 80%;
@@ -145,6 +153,27 @@
             .menuItem{
                 width: 90vw;
             }
+        }
+    }
+    .maps{
+  
+    
+        .locationButtons{   
+            margin: auto;
+            margin-bottom: 44px;
+            width: 270px;
+    
+                button{
+                    height: 64px;
+                    width: 130px;
+                    margin-top: 50px;
+                    margin-right: 5px;
+    
+                    span{
+                        font-size: 17px;
+                    }
+                }
+         
         }
     }
     

@@ -1,0 +1,38 @@
+
+<div class="padNav"></div>
+
+
+
+<div class="example-container">
+    <mat-form-field>
+        <mat-select [formControl]="categoryForm" placeholder="Category">
+          <mat-option value="pizza">Pizza</mat-option>
+          <mat-option value="starters">Starters</mat-option>
+          <mat-option value="salads">Salads</mat-option>
+          <mat-option value="subs-and-wraps">Subs and Wraps</mat-option>
+          <mat-option value="pasta">Pasta</mat-option>
+          <mat-option value="calzones">Calzones</mat-option>
+          
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field>
+      <input [formControl]="nameForm" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea [formControl]="descriptionForm" matInput placeholder="Description"></textarea>
+      </mat-form-field>
+    <mat-form-field>
+      <input [formControl]="pricesForm" matInput placeholder="Prices (10,15,20)">
+    </mat-form-field>
+    <mat-form-field>
+      <input [formControl]="sizesForm" matInput placeholder="Sizes (Small,Medium,Large)">
+    </mat-form-field>
+    <button (click)="addMenuItem()" mat-raised-button color="primary">Add Item to Menu</button>
+    
+  
+    
+  </div>
+  <div class = "col" *ngFor="let mi of menuItems | async">
+      <h5>{{mi.data.name}} - <span (click)="deleteItem(mi.id)" style="color: red">DELETE</span></h5>
+    </div>
+

@@ -1,0 +1,18 @@
+<h2>{{menuItem.name}}</h2>
+<p>{{menuItem.description}}</p>
+<div *ngIf="menuItem.prices.length > 1">
+    <h4>Prices:</h4>
+    <span *ngFor="let price of menuItem.prices; index as i">
+      ${{price}}<span *ngIf="i != menuItem.prices.length - 1"> | </span>
+    </span>
+</div>
+<h4 *ngIf="menuItem.prices.length == 1">${{menuItem.prices[0]}}</h4>
+<div *ngIf="menuItem.sizes.length > 0 && menuItem.sizes[0] != ''">
+    <h4>Sizes:</h4>
+    <span *ngFor="let size of menuItem.sizes; index as i">
+        {{size}}<span *ngIf="i != menuItem.sizes.length - 1"> | </span>
+      </span>
+</div>
+
+
+

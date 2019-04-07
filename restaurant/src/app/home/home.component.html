@@ -1,12 +1,14 @@
 <div class="slider-wrapper">
-    <slideshow [imageUrls]="imageUrlArray" [minHeight]="'700px'" [autoPlay]="true" [showArrows]="false"></slideshow>
+    <slideshow [imageUrls]="imageUrlArray" [minHeight]="'400px'" [autoPlay]="true" [showArrows]="false"></slideshow>
 </div>
 <div class="slider-wrapper-mobile">
-        <slideshow [imageUrls]="imageUrlArray" [minHeight]="'400px'" [autoPlay]="true" [showArrows]="false"></slideshow>
+        <slideshow [imageUrls]="imageUrlArray" [minHeight]="'300px'" [autoPlay]="true" [showArrows]="false"></slideshow>
     </div>
 <div class="welcomeSection">
     <h2>Welcome to Papa Leos!</h2>
     <h2>More Than Just Great Pizza</h2>
+    Reward Points: {{user?.rewardPoints}}
+    <button mat-raised-button color="primary" (click)="updatePts()">add 20</button>
 </div>
 <div class="ourStorySection">
 
@@ -22,33 +24,20 @@
 <div class="menuPreviewWrapper">
     <div class="menuPreview">
         <div class="flex-container">
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            <div class="menuItem">
-                <app-home-menu-item></app-home-menu-item>
-            </div>
-            
+            <div class="menuItem" *ngFor="let mi of menuItems">
+                <mat-card>
+
+                    <app-home-menu-item [name]="mi.name" [accentText]="mi.accentText" [imgUrl]="mi.imgUrl"></app-home-menu-item>
+                </mat-card>
+            </div>           
         </div>
     </div>
         
 </div>
 <div class="maps">
     <div class="locationButtons">
-        <button mat-raised-button color="primary" [style.background-color]="map==1 ? '#673ab7' : '#8e69ce'"(click)="swapLocation(1)">Lockport</button>
-        <button mat-raised-button color="primary" [style.background-color]="map!=1 ? '#673ab7' : '#8e69ce'" (click)="swapLocation(2)">Niagara Falls</button>
+        <button mat-raised-button color="primary" (click)="swapLocation(1)">Lockport</button>
+        <button mat-raised-button color="primary"  (click)="swapLocation(2)">Niagara Falls</button>
     </div>
     
 

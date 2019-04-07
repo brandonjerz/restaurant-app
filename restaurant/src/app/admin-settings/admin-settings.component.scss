@@ -1,0 +1,31 @@
+.example-container {
+    float: left;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 400px;
+  }
+  
+
+  @media only screen and (max-width: 796px) {
+    .example-container {
+        margin: 0 auto;
+        float: none;
+        width: 100%;
+        text-align: center;
+
+      }
+    .example-container > * {
+        margin: 0 auto;
+        width: 90vw;
+      }
+      .col{
+        text-align: center;
+    }
+
+}

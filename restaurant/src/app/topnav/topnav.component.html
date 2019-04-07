@@ -12,23 +12,52 @@
       <li class="logoWrapperMobile">
           <img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" >
         </li>
+      <li *ngIf="!mobileView && auth.canDelete(user)"><a [routerLink]="['/admin']" style="color: red">ADMIN</a></li>
       <li *ngIf="!mobileView"><a [routerLink]="['/']">About</a></li>
       <li *ngIf="!mobileView"><a [routerLink]="['/menu']">Menu</a></li>
       <li *ngIf="!mobileView"><a href="#">Directions</a></li>
-      <li *ngIf="!mobileView"><a href="#">Loyalty</a></li>
-      <li *ngIf="mobileView"><div class="hamButton" (click)="toggleHam()">
+      <li *ngIf="!mobileView"><a href="#" (click)='openLoyalty()'>Loyalty</a></li>
+      <li *ngIf="!mobileView && auth.canRead(user)" (click)="signOut()"><a href="#">Log Out</a></li>
+      <li *ngIf="!mobileView && !auth.canRead(user) && showSignIn" (click)="signIn()">Log In</li>
+      <li *ngIf="mobileView && showSignIn"><div class="hamButton" (click)="toggleHam()">
           <i class="material-icons">{{hamIcon}}</i>
-      </div></li>
+      </div>
+      </li>
+      <li *ngIf="mobileView && !showSignIn" mat-dialog-close><div class="hamButton">
+      
+      </div>
+      </li>
       
     </ul>
   </div>
   <div *ngIf="!hamClosed && mobileView" class="hamOpen"> 
       
       <ul>
+          <li *ngIf="mobileView && auth.canDelete(user)"(click)="toggleHam()"><a [routerLink]="['/admin']" style="color:red">ADMIN</a></li>
           <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/']">About</a></li>
-          <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/menu']" href="#">Menu</a></li>
-          <li *ngIf="mobileView"><a href="#">Directions</a></li>
-          <li *ngIf="mobileView"><a href="#">Loyalty</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/menu']">Menu</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()">Directions</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()">Loyalty</a></li>
+          <li *ngIf="mobileView && auth.canRead(user)"><a (click)="signOut(); toggleHam()">Log Out</a></li>
+          <li *ngIf="mobileView && !auth.canRead(user) && showSignIn"><a (click)="signIn(); toggleHam()">Log In</a></li>
         </ul>
   </div>
 </header>
+<div *ngIf="stickyPhoneAll" class="stickyPhoneAll">
+  <h1>Lockport</h1>
+  <h2><a href="tel:716-867-5309">716-867-5309</a></h2>
+  <h1>Niagara Falls</h1>
+  <h2><a href="tel:716-867-5309">716-867-5309</a></h2>
+</div>
+<div (click)="togglePhoneNums()" class="stickyPhone">
+  <div *ngIf="stickyPhoneAll" class="stickyPhoneClose">
+    Close
+  </div>
+  <div *ngIf="!stickyPhoneAll" class="stickyPhoneIcon">
+      <i class="material-icons">phone</i> 
+  </div>
+  <div *ngIf="!stickyPhoneAll" class="stickyPhoneCallNow">
+      Call Now!
+  </div>
+  
+</div>

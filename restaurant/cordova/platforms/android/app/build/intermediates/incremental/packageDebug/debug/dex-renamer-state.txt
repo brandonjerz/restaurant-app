@@ -1,0 +1,4 @@
+#Mon Nov 19 21:16:24 EST 2018
+base.0=/Users/brandonjerz/Desktop/restaurant-app/restaurant/cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

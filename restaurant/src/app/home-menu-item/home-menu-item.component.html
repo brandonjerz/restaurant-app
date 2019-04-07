@@ -1,16 +1,16 @@
 <div class="mi">
-    <img src="https://doughboyspizza.com/wp-content/uploads/2016/09/wings.jpg" alt="" >
+    <img src="{{imgUrl}}" alt="" >
     
   <div class="mi-description">
     <div class="img-tag">
-    To Share!
+    {{accentText}}
     </div>
     <div class="mi-name">
       
     </div>
-      Starters
+      {{name}}
     <div class="mi-btn">
-        <button mat-raised-button color=primary>
+        <button mat-raised-button color=primary [routerLink]="['/menu']">
             VIEW MENU
           </button>
     </div>

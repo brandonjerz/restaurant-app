@@ -1,0 +1,46 @@
+
+    <div class="closeLogin">
+        <button class="closeBtn" mat-dialog-close><i class="material-icons">close</i></button>
+    </div>
+    <div *ngIf="!reset" class="login">
+      <h1>Login</h1>
+      <form [formGroup]="emailFG">
+        <mat-form-field>
+          <input type="text" style="width: 300px" formControlName="emailForm" matInput placeholder="Email Address">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+          <input type="password" style="width: 300px" formControlName="passForm" matInput placeholder="Password">
+        </mat-form-field>
+        <div (click)="toggleReset()">Forgot Password?</div>
+        <div *ngIf="accountExists" style="color: red">Account Already Exists</div>
+        <div *ngIf="authFailed" style="color: red">Incorrect Password</div>
+        <div *ngIf="noAccount" style="color: red">Account Does Not Exist</div>
+        <div *ngIf="loginSuccessful" style="color:green">Login Successful</div>
+        <div *ngIf="signUpSuccessful" style="color:green">Sign Up Successful</div>
+    
+        <button *ngIf="!loginSuccessful && !signUpSuccessful" mat-raised-button class="buttons" color="primary" (click)="signIn()">Sign In</button>
+        <button *ngIf="!loginSuccessful && !signUpSuccessful" mat-raised-button class="buttons" color="primary" (click)="signUp()">Sign Up</button>
+        <button *ngIf="loginSuccessful" mat-raised-button  mat-dialog-close class="buttons" color="primary">Close</button>
+        <button *ngIf="signUpSuccessful" mat-raised-button  mat-dialog-close class="buttons" color="primary" (click)="signIn()">Close</button>
+      </form>
+    </div>
+        <br/>
+      <div *ngIf="reset" class="login">
+        <h1>Password Reset</h1>
+        <p *ngIf="!resetSubmitted">Please enter the email address you used to sign up for this site</p>
+        <p *ngIf="resetSubmitted">{{resetMsg}}</p>
+        <form *ngIf="!resetSubmitted"[formGroup]="emailFG">
+          <mat-form-field>
+            <input type="text" style="width: 300px" formControlName="emailForm" matInput placeholder="Email Address">
+          </mat-form-field>
+          <button mat-raised-button class="buttons" color="primary" (click)="resetPassword()">Reset</button>
+        </form>
+      </div>
+    
+        
+        
+    
+      
+        
+

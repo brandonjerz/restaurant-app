@@ -1,4 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { User } from '../user';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-topnav',
@@ -10,13 +14,19 @@ export class TopnavComponent implements OnInit {
   hamClosed: boolean = true;
   hamIcon: string = "menu"
   innerWidth: number;
-  constructor() { }
+  stickyPhoneAll: boolean = false;
+  user: User;
+  showSignIn: boolean = true;
+  constructor(public auth: AuthService, private dialog: MatDialog) { }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
     this.checkForMobile();
   }
+
+
   ngOnInit() {
+    this.auth.user.subscribe(user => this.user = user);
     this.innerWidth = window.innerWidth;
     this.checkForMobile();
   }
@@ -32,6 +42,28 @@ export class TopnavComponent implements OnInit {
       this.mobileView = false;
       this.hamClosed = true;
     }
+  }
+  togglePhoneNums(){
+    this.stickyPhoneAll = !this.stickyPhoneAll;
+  }
+  signOut(){
+    this.auth.signOut();
+  }
+  signIn(){
+    this.showSignIn = false;
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = "380px";
+    dialogConfig.width ="450px";
+    
+
+
+    this.dialog.open(LoginComponent, dialogConfig);
+    this.dialog.afterAllClosed.subscribe(evt =>{
+      this.showSignIn = true;
+    })
   }
 
 }
