@@ -27,8 +27,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/mat-theme.scss"
+              {
+                "input":"src/mat-theme.scss"
+              },
+              "src/styles.scss"
+
             ],
             "scripts": []
           },

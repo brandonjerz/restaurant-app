@@ -1,3 +1,4 @@
+@import '../../sass-variables.scss';
 .welcomeSection{
     margin-top: 45px;
     height: 67px;
@@ -9,16 +10,16 @@
     }
 }
 .test {
-  background-color: red;
+  background-color: $main-color;
 }
 .selectedCatButton{
-  background-color: red ;
+  background-color: $main-color ;
   color: white ;
 
 }
 .unselectedCatButton{
 
-  background-color: green;
+  background-color: $main-color-disable;
   color: white;
 
    
@@ -38,7 +39,7 @@
     
   }
 .flex-grid .col {
-    border-top: 5px solid red;
+    border-top: 5px solid $main-color;
     word-wrap: break-word;
     width: 330px;
     padding-bottom: 40px;
