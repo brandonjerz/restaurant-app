@@ -98,11 +98,12 @@ header{
         align-self: flex-start;
     }
     .logoWrapperMobile{
-        margin-top: 45px;
-        margin-left: 20px;
-        flex:1;
+        margin-top: 17px;
+        margin-left: -65px;
+        flex: 1;
+        -ms-grid-row-align: center;
         align-self: center;
-        width: 172px; 
+        width: 172px;
         height: 112px;
    
 
@@ -165,6 +166,15 @@ header{
         justify-content: center;
         text-align: center;
        
+    }
+    #logo{
+        height: 100px;
+        width: 200px;
+        position: fixed;
+        top: 52px;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
     }
     .hamOpen{
         li{

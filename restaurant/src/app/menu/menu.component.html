@@ -6,18 +6,17 @@
     <h2>MENU</h2>
 </div>
 <div class ="categoryBtnContainer">
-    <button id="firstCatButton" mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pizza', 'unselectedCatButton': selectedCat != 'pizza' }" (click)="filterOn('pizza')">Pizza</button>
-    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'starters', 'unselectedCatButton': selectedCat != 'starters' }" (click)="filterOn('starters')">Starters</button>
-    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'salads', 'unselectedCatButton': selectedCat != 'salads' }" (click)="filterOn('salads')">Salads</button>
-    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'subs-and-wraps', 'unselectedCatButton': selectedCat != 'subs-and-wraps' }" (click)="filterOn('subs-and-wraps')">Subs/Wraps</button>
-    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pasta', 'unselectedCatButton': selectedCat != 'pasta' }" (click)="filterOn('pasta')">Pasta</button>
-    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'calzones', 'unselectedCatButton': selectedCat != 'calzones' }" (click)="filterOn('calzones')">Calzones</button>
+    <button id="firstCatButton" mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pizza', 'unselectedCatButton': selectedCat != 'pizza' }" (click)="filterOn('sandviches')">Sandviches</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'starters', 'unselectedCatButton': selectedCat != 'starters' }" (click)="filterOn('meals')">Meals</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'salads', 'unselectedCatButton': selectedCat != 'salads' }" (click)="filterOn('sides')">Sides</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'subs-and-wraps', 'unselectedCatButton': selectedCat != 'subs-and-wraps' }" (click)="filterOn('salads')">Salads</button>
+    <button mat-raised-button color="primary" [ngClass]="{'selectedCatButton': selectedCat == 'pasta', 'unselectedCatButton': selectedCat != 'pasta' }" (click)="filterOn('beverages')">Beverages</button>
 </div>
 
 
 <div class="flex-grid">
     <div *ngFor="let mi of shownMenuItems">
-        <div class = "col">
+        <div class = "col" >
             <mat-card>
                 <app-menu-item [menuItem]="mi"></app-menu-item>
             </mat-card> 

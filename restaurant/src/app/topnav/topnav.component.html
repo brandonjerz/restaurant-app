@@ -10,13 +10,13 @@
       <!-- <li><i class="material-icons phone">phone</i></li> -->
       <!-- <li class="logoWrapper"><img src="https://www.papaleos.com/uploads/9/8/8/6/98866630/published/unnamed-1.png?1487187551" alt="" width="172px" height="112px"></li> -->
       <li class="logoWrapperMobile">
-          <img src="/assets/images/aleslogo.png" alt="" >
+          <a href="/"><img id="logo" src="/assets/images/aleslogo.png" alt="" ></a>
         </li>
       <li *ngIf="!mobileView && auth.canDelete(user)"><a [routerLink]="['/admin']" style="color: red">ADMIN</a></li>
       <li *ngIf="!mobileView"><a [routerLink]="['/']">About</a></li>
       <li *ngIf="!mobileView"><a [routerLink]="['/menu']">Menu</a></li>
-      <li *ngIf="!mobileView"><a href="#">Directions</a></li>
-      <li *ngIf="!mobileView"><a href="#" (click)='openLoyalty()'>Loyalty</a></li>
+      <li *ngIf="!mobileView"><a href="#">Coupons</a></li>
+      <li *ngIf="!mobileView"><a [routerLink]="['/loyalty']">Loyalty</a></li>
       <li *ngIf="!mobileView && auth.canRead(user)" (click)="signOut()"><a href="#">Log Out</a></li>
       <li *ngIf="!mobileView && !auth.canRead(user) && showSignIn" (click)="signIn()">Log In</li>
       <li *ngIf="mobileView && showSignIn"><div class="hamButton" (click)="toggleHam()">
@@ -36,8 +36,8 @@
           <li *ngIf="mobileView && auth.canDelete(user)"(click)="toggleHam()"><a [routerLink]="['/admin']" style="color:red">ADMIN</a></li>
           <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/']">About</a></li>
           <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/menu']">Menu</a></li>
-          <li *ngIf="mobileView"><a (click)="toggleHam()">Directions</a></li>
-          <li *ngIf="mobileView"><a (click)="toggleHam()">Loyalty</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()">Coupons</a></li>
+          <li *ngIf="mobileView"><a (click)="toggleHam()" [routerLink]="['/loyalty']" >Loyalty</a></li>
           <li *ngIf="mobileView && auth.canRead(user)"><a (click)="signOut(); toggleHam()">Log Out</a></li>
           <li *ngIf="mobileView && !auth.canRead(user) && showSignIn"><a (click)="signIn(); toggleHam()">Log In</a></li>
         </ul>

@@ -1,17 +1,17 @@
 
-<div class="padNav"></div>
 
 
 
-<div class="example-container">
+<div>
+  <div class="example-container">
     <mat-form-field>
         <mat-select [formControl]="categoryForm" placeholder="Category">
-          <mat-option value="pizza">Pizza</mat-option>
-          <mat-option value="starters">Starters</mat-option>
+          <mat-option value="sandviches">Sandviches</mat-option>
+          <mat-option value="meals">Meals</mat-option>
+          <mat-option value="sides">Sides</mat-option>
           <mat-option value="salads">Salads</mat-option>
-          <mat-option value="subs-and-wraps">Subs and Wraps</mat-option>
-          <mat-option value="pasta">Pasta</mat-option>
-          <mat-option value="calzones">Calzones</mat-option>
+          <mat-option value="beverages">Beverages</mat-option>
+
           
         </mat-select>
       </mat-form-field>
@@ -36,3 +36,6 @@
       <h5>{{mi.data.name}} - <span (click)="deleteItem(mi.id)" style="color: red">DELETE</span></h5>
     </div>
 
+
+</div>
+<div class="padNav"></div>

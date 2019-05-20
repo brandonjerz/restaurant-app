@@ -33,6 +33,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
 import { LoginComponent } from './login/login.component';
+import { LoyaltyComponent } from './loyalty/loyalty.component';
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -44,7 +45,8 @@ export const firebaseConfig = environment.firebaseConfig;
     HomeMenuItemComponent,
     MenuItemComponent,
     AdminSettingsComponent,
-    LoginComponent
+    LoginComponent,
+    LoyaltyComponent
   ],
   imports: [
     BrowserModule,

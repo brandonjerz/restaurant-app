@@ -1,0 +1,34 @@
+Reward Points: {{user?.rewardPoints}}
+
+Points to earn: {{pointsToEarn}}
+
+<div class="example-container">
+  <mat-form-field>
+    <input (keyup)="calculatePoints()" type="number" matInput [(ngModel)]="priceField" placeholder="Total Price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input  matInput [(ngModel)]="codeField"  placeholder="Restaurant Code">
+  </mat-form-field>
+  <h4 *ngIf="pointsToEarn > 0">You will earn {{pointsToEarn}} points with this purchase!</h4>
+
+    <button mat-raised-button color="primary" (click)="addPts()">Add Points</button>
+
+</div>
+<div class="example-container">
+
+    <mat-form-field>
+        <input (keyup)="calculatePrice()" type="number" matInput [(ngModel)]="redeemPriceField" placeholder="Total Price">
+      </mat-form-field>
+  <mat-form-field>
+    <input (keyup)="calculatePrice()" type="number" matInput [(ngModel)]="pointsToRedeem" placeholder="Points to Redeem Max: {{user?.rewardPoints}} points">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="codeField" placeholder="Restaurant Code">
+  </mat-form-field>
+  <h4 *ngIf="pointsToRedeem > 0 && redeemPriceField > 0">Redeeming {{pointsToRedeem}} points brings your total to ${{reducedPrice}}</h4>
+
+    <button mat-raised-button color="primary" (click)="removePts()">Redeem Points</button>
+
+</div>

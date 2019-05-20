@@ -1,4 +1,7 @@
 @import '../../sass-variables.scss';
+mat-card{
+  min-height: 344px;
+}
 .welcomeSection{
     margin-top: 45px;
     height: 67px;
@@ -61,9 +64,12 @@
       flex-direction: column;
     }
     .flex-grid .col{
-      width: 100%;
+      width: 90vw;
       margin: 0px;
       
+    }
+    mat-card{
+      min-height: 0px;
     }
     
     

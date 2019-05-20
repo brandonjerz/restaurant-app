@@ -121,7 +121,7 @@ updateUser(user: User, data: any){
       email: user.email,
       photoURL: user.photoURL,
       displayName: user.displayName,
-      rewardPoints: "0",
+      rewardPoints:  (parseInt(user.rewardPoints) + ptChange).toString(),
       roles: {
         subscriber: true
       }

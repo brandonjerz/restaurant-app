@@ -36,15 +36,10 @@ menuItems: HomeMenuItem[] = [
   ngOnInit() {
     this.auth.user.subscribe(user =>{
       this.user = user;
-      console.log(user);
     });
-    console.log(this.user);
-    console.log(this.menuItems);
+
   }
   swapLocation(locationId: number){
     this.map = locationId;
-  }
-  updatePts(){
-    //this.auth.editPts(this.user, 20);
   }
 }
